@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Twitter widget</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
+</head>
+<body>
+  <section class="widget">
+    <div class="loader">
+      <div>
+        <img src="assets/images/loading.svg" />
+        <h2>Refreshing tweets...</h2>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/assets/js/data.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <script type="text/javascript">
+    var tweetUpdater = Updater;
+
+    $(document).ready(function() {
+      var updater = new tweetUpdater();
+
+      // updater.dry_run(updater.success, updater.error, false);
+      
+      // var interval = setInterval(function () {
+      //   updater.refresh(updater.dry_run.bind(updater));
+      // }, 5000);
+
+      updater.fetch(updater.success, updater.error);
+
+      var interval = setInterval(function () {
+        updater.refresh(updater.fetch.bind(updater));
+      }, 61000);
+    });
+  </script>
+</body>
+</html>

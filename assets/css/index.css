@@ -1,0 +1,167 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  background: #f3f3f3;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+Loading screen styles
+*/
+section .loader {
+  /*position: absolute;*/
+  width: 100%;
+  height: 4em;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 99;
+  background: #f3f3f3;
+  border-bottom: 1px solid #e1e1e1;
+  transition: height 300ms;
+}
+
+section .loader.collapsed {
+  height: 0;
+}
+
+/*section .loader div {
+  text-align: center;
+  margin-top: 4em;
+}*/
+
+section .loader h2 {
+  display: inline-block;
+  margin: 1em 0;
+  line-height: 2em;
+  vertical-align: top;
+  font-size: 1em;
+  text-align: center;
+  color: #8d8d8d;
+}
+
+section .loader h2.error {
+  margin: 1em;
+  color: #f8645f;
+}
+
+section .loader img {
+  width: 4em;
+  height: 4em;
+}
+
+section .loader img.error {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 1.25em 0 1.25em 1.25em;
+}
+
+/*
+Tweets styles
+*/
+article {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  transition: background-color 600ms;
+}
+
+article.injected {
+  /*box-shadow: inset 0 0 0 .2rem rgba(0,123,255,.25);*/
+  background-color: rgba(0, 123, 255, 0.10);
+}
+
+article.no-image {
+  border-top: 1px solid #fbfbfb;
+  border-bottom: 1px solid #e6e4e4;
+}
+
+article > a img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.tweet {
+  float:left;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  background-color: rgba(0,0,0,.7);
+  padding: .5em;
+  font-size: .8em;
+  overflow: hidden;
+  color: #fff;
+  -webkit-box-shadow: 0 -2px 3px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0 -2px 3px rgba(0,0,0,0.7);
+  box-shadow: 0 -2px 3px rgba(0,0,0,0.7);
+}
+
+.no-image .tweet {
+  float: none;
+  position: relative;
+  background-color: transparent;
+  color: #000;
+}
+
+.tweet > img {
+  float: left;
+  width: .9em;
+  height: .9em;
+  margin: 4px;
+}
+
+.tweet h3 i.twitter-icon {
+  float: left;
+  width: .9em;
+  height: .9em;
+  margin: 4px;
+  background-image: url(/assets/images/twitter.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.tweet h3 i.no-image {
+  background-image: url(/assets/images/twitter-dark.svg);
+}
+
+h3 {
+  display: inline;
+  font-weight: 700;
+}
+
+small {
+  font-size: 1em;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+small a {
+  color: #3b94d9;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+small a:hover {
+  text-decoration: underline;
+}
+
+.description {
+  font-weight: normal;
+  padding: .2em;
+}
